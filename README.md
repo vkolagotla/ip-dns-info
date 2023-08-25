@@ -24,8 +24,6 @@ The script should just display the IP and DNS details in the top bar of GNOME de
 9. Proxy(Yes or No)
 10. VPN Status(ON or OFF)
 
-<!-- screenshot of the plugin which in the center of the screen at 50% width -->
-
 <p align="center">
 <img src="src/screenshot.png" alt="Screenshot of the plugin" width="50%">
 </p>
