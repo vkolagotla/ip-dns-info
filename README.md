@@ -1,6 +1,8 @@
 # IP Address and DNS details
 
-![logo](src/logo.png)
+<p align="center">
+<img src="src/logo.png" alt="logo of the plugin" width="30%">
+</p>
 
 ## Argos plug-in to Display IP and DNS details in the top bar of GNOME desktop environment.
 
