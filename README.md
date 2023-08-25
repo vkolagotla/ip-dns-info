@@ -1,10 +1,12 @@
-# IP and DNS details
+# IP Address and DNS details
 
-## Argos plugin to Display IP and DNS details in the top bar of GNOME desktop environment.
+![logo](src/logo.png)
+
+## Argos plug-in to Display IP and DNS details in the top bar of GNOME desktop environment.
 
 ### Installation
 
-1. Obviously you need python and [Argos](https://github.com/Coda-Coda/argos.git) (recomended for all gnome versions) / [Argos](https://github.com/rammie/argos/tree/gnome-3.36) (gnome-3.36 branch for gnome versions <40)
+1. Obviously you need python and [Argos](https://github.com/Coda-Coda/argos.git) (recommended for all gnome versions) / [Argos](https://github.com/rammie/argos/tree/gnome-3.36) (gnome-3.36 branch for gnome versions <40)
 2. Copy the script to `~/.config/argos/` directory.
 3. Make the script executable by running `chmod +x ip_dns_info.c.1m.py`.
 4. Refresh GNOME extensions by pressing `Alt+F2` and typing `r` and pressing `Enter`.
@@ -39,4 +41,4 @@ There is a limit of 45 requests per minute. If you exceed this limit, you will g
 The code is licensed under **Apache License 2.0.** The API does not require any authentication and is free to use for non-commercial use.
 
 ### TODO:
-- [ ] Fix Refresh in the Dropdown.
+- [ ] Fix Refresh in the Drop down.
