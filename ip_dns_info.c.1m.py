@@ -2,7 +2,7 @@
 
 __author__ = "Venkata Kolagotla"
 __created__ = "2023-08-24 19:16"
-__last_updated__ = "2023-08-25 11:06"
+__last_updated__ = "2023-08-25 12:44"
 __copyright__ = "Copyright 2023"
 __credits__ = ["Venkata Kolagotla"]
 __license__ = "Apache License, Version 2.0"
@@ -287,6 +287,8 @@ def main() -> None:
     lat: float = ip_details.get("lat", "")
     lon: float = ip_details.get("lon", "")
     zip_code: str = ip_details.get("zip", "")
+    region: str = ip_details.get("regionName", "")
+    country: str = ip_details.get("country", "")
     isp: str = ip_details.get("isp", "")
     mobile: bool = ip_details.get("mobile", False)
     proxy: bool = ip_details.get("proxy", False)
@@ -316,9 +318,11 @@ def main() -> None:
     print(f"{flag_emoji}({city_color}{city}{reset_color})")
     print("---")
     print(f"Public IP: {reset_color}\033[33m{ip_address}\033[0m")
-    print(f"Zipcode: {reset_color}\033[33m{zip_code}\033[0m")
     print(f"Latitude: {reset_color}\033[33m{lat}\033[0m")
     print(f"Longitude: {reset_color}\033[33m{lon}\033[0m")
+    print(f"Zipcode: {reset_color}\033[33m{zip_code}\033[0m")
+    print(f"Region: {reset_color}\033[33m{region}\033[0m")
+    print(f"Country: {reset_color}\033[33m{country}\033[0m")
     print(f"ISP: {reset_color}\033[33m{isp}\033[0m")
     print(
         f"Connection Type: {reset_color}\033[33m{'Cellular' if mobile else 'Non Cellular'}\033[0m"
