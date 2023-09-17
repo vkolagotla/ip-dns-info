@@ -2,11 +2,11 @@
 
 __author__ = "Venkata Kolagotla"
 __created__ = "2023-08-24 19:16"
-__last_updated__ = "2023-08-25 12:44"
+__last_updated__ = "2023-09-17 20:44"
 __copyright__ = "Copyright 2023"
 __credits__ = ["Venkata Kolagotla"]
 __license__ = "Apache License, Version 2.0"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __maintainer__ = "Venkata Kolagotla"
 __email__ = "vkolagotla@pm.me"
 __status__ = "Development"
@@ -14,9 +14,12 @@ __description__ = "Get external IP address and details"
 __usage__ = "Place the script at ~/.config/argos/ with name extip.1m.py"
 
 
+import datetime
 import requests
 import subprocess
 from typing import Dict, Optional
+
+import pytz
 
 # Dictionary of all country codes and respective flag emojis
 country_flags: Dict[str, str] = {
@@ -269,6 +272,23 @@ def is_vpn_active() -> bool:
         return any(line.startswith("vpn:") for line in output.splitlines())
     except subprocess.CalledProcessError:
         return False
+    
+
+def get_current_time(timezone: str) -> str:
+    """Get current time based on timezone.
+
+    Parameters
+    ----------
+    timezone: str
+        Timezone as a string.
+
+    Returns
+    -------
+    str: Current time as a string.
+    """
+    tz = pytz.timezone(timezone)
+    current_time = datetime.datetime.now(tz)
+    return current_time.strftime("%H:%M")
 
 
 def main() -> None:
@@ -284,6 +304,8 @@ def main() -> None:
 
     country_code: str = ip_details.get("countryCode", "")
     city: str = ip_details.get("city", "")
+    timezone: str = ip_details.get("timezone", "")
+    current_time: str = get_current_time(timezone)
     lat: float = ip_details.get("lat", "")
     lon: float = ip_details.get("lon", "")
     zip_code: str = ip_details.get("zip", "")
@@ -318,6 +340,8 @@ def main() -> None:
     print(f"{flag_emoji}({city_color}{city}{reset_color})")
     print("---")
     print(f"Public IP: {reset_color}\033[33m{ip_address}\033[0m")
+    print(f"Timezone: {reset_color}\033[33m{timezone}\033[0m")
+    print(f"Current Time: {reset_color}\033[33m{current_time}\033[0m")
     print(f"Latitude: {reset_color}\033[33m{lat}\033[0m")
     print(f"Longitude: {reset_color}\033[33m{lon}\033[0m")
     print(f"Zipcode: {reset_color}\033[33m{zip_code}\033[0m")
