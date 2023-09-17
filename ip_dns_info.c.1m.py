@@ -2,11 +2,11 @@
 
 __author__ = "Venkata Kolagotla"
 __created__ = "2023-08-24 19:16"
-__last_updated__ = "2023-09-17 20:44"
+__last_updated__ = "2023-09-17 21:22"
 __copyright__ = "Copyright 2023"
 __credits__ = ["Venkata Kolagotla"]
 __license__ = "Apache License, Version 2.0"
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __maintainer__ = "Venkata Kolagotla"
 __email__ = "vkolagotla@pm.me"
 __status__ = "Development"
@@ -288,7 +288,7 @@ def get_current_time(timezone: str) -> str:
     """
     tz = pytz.timezone(timezone)
     current_time = datetime.datetime.now(tz)
-    return current_time.strftime("%H:%M")
+    return current_time.strftime("%b %d, %H:%M")
 
 
 def main() -> None:
