@@ -13,6 +13,8 @@
 3. Make the script executable by running `chmod +x ip_dns_info.c.1m.py`.
 4. Refresh GNOME extensions by pressing `Alt+F2` and typing `r` and pressing `Enter`.
 
+It also need `xclip` to copy the details to the clipboard. You can install it by running `sudo apt install xclip` in Debian based distros.
+
 ### Usage
 
 The script should just display the IP and DNS details in the top bar of GNOME desktop with a Country Flag emoji and the city name. If the city name is in green color, it means your system is connected to a VPN. If the city name is in red color, it means your system is not connected to a VPN. You can click on the city name to see the IP and DNS details in a drop down window. Which shows following details:
@@ -29,6 +31,8 @@ The script should just display the IP and DNS details in the top bar of GNOME de
 10. Connection Type(Cellular or Non-Cellular)
 11. Proxy(Yes or No)
 12. VPN Status(ON or OFF)
+
+You can also copy some of the details to the clipboard by clicking on them.
 
 <p align="center">
 <img src="src/screenshot.png" alt="Screenshot of the plugin" width="50%">
